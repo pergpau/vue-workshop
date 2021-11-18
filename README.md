@@ -1,24 +1,18 @@
-# vue-workshop
+# Vue-workshop 24. nov
 
-## Project setup
-```
-npm install
-```
+## Forberedelser før workshopen
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+### 0. Installere node og npm
 
-### Compiles and minifies for production
-```
-npm run build
-```
+Hvis du ikke allerede har node og npm anbefaler jeg å installere/bruke dem med [nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
-### Lints and fixes files
-```
-npm run lint
-```
+### 1. Git clone/last ned dette repoet
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### 2. Installer packages
+
+Gå til mappa for prosjektet og skriv ```npm i```
+
+### 3. Fyr opp dev-server
+```npm run serve```
+
+Gå til http://localhost:8080/ og hvis ser en tom todo-liste er du klar for workshop!
