@@ -1,5 +1,5 @@
 <template>
-  <h2 class="title">{{ userName }}s gjøremål</h2>
+  <h1 class="title">{{ userName }}s gjøremål</h1>
   <div class="input-container">
     <input
       placeholder="Hva må du gjøre?"
