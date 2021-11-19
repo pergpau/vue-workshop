@@ -10,26 +10,15 @@
 
   <div class="todos-container">
     <div v-if="todosExist">
-      <div
-        class="todo-item"
+      <todo-item
         v-for="(todo, index) in todos"
-        :key="todo.text"
+        :key="todo.text + index"
+        :text="todo.text"
+        :isCompleted="todo.isCompleted"
+        @delete="handleDeleteTodo(index)"
+        @check="todo.isCompleted = !todo.isCompleted"
       >
-        <label class="todo-checkbox">
-          <input
-            type="checkbox"
-            v-model="todo.isCompleted"
-          >
-          <span></span>
-        </label>
-        <div :class="{completed: todo.isCompleted}">{{ todo.text }}</div>
-        <span
-          class="material-icons"
-          @click="handleDeleteTodo(index)"
-        >
-          delete
-        </span>
-      </div>
+      </todo-item>
       <div style="margin-top: 20px"> {{ noOfCompletedTasks }} gjøremål fullført</div>
     </div>
     <div v-else>
@@ -50,9 +39,13 @@
 </template>
 
 <script>
+import TodoItem from '../components/TodoItem.vue'
 
 export default {
   name: 'Home',
+  components: {
+    TodoItem: TodoItem
+  },
   data () {
     return {
       user: {
@@ -74,6 +67,9 @@ export default {
     },
     handleDeleteTodo (index) {
       this.todos.splice(index, 1)
+    },
+    todosAsString (todos) {
+      return todos.map(todo => todo.text).join(' - ')
     }
   },
   computed: {
@@ -86,23 +82,20 @@ export default {
     noOfCompletedTasks () {
       return this.todos.filter(todo =>
         todo.isCompleted === true).length
-    },
-    todosAsString () {
-      return this.todos.map(todo => todo.text).join('-')
     }
   },
   watch: {
     todos: {
-      handler () {
-        this.snapshots.push(this.todosAsString)
+      handler (value) {
+        this.snapshots.push(this.todosAsString(value))
       },
       deep: true
     }
   },
   mounted () {
     this.user = {
-      firstName: 'Per Gunnar',
-      lastName: 'Paulsen'
+      firstName: 'Tim',
+      lastName: 'Origosen'
     }
   }
 }

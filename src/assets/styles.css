@@ -4,7 +4,7 @@ body {
   font-family: Karla, sans-serif;
   font-size: 16px;
   margin: 0;
-  background-color: #b0dfae;
+  background-color: #c9ddc9bb;
 }
 ::-webkit-scrollbar {
   height: 10px;
@@ -56,18 +56,18 @@ input:focus-visible {
 button {
   width: 60px;
   color: #ffffff;
-  background-color: #59daac;
+  background-color: #41b883;
   border-radius: 10px;
   border-style: none;
   margin-left: 10px;
   margin-right: 20px;
 }
 
-.todo-card {
+.router-container {
   width: 500px;
   background-color: #ffffff;
   border-radius: 20px;
-  border-color: #59daac;
+  border-color: #41b883;
   border-style: solid;
   min-height: 800px;
 }
@@ -108,6 +108,7 @@ button {
   color: rgba(247, 93, 93, 0.733);
   margin-left: 8px;
   margin-left: auto;
+  cursor: pointer;
 }
 
 .logg {
@@ -205,4 +206,14 @@ button {
 }
 .todo-checkbox > input:checked + span::after {
   border-color: #fff;
+}
+
+.nav {
+  margin-bottom: 10px;
+}
+.nav a {
+  padding: 12px;
+  text-decoration: none;
+  font-size: 17px;
+  color: black;
 }

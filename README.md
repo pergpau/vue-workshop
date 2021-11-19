@@ -15,4 +15,4 @@ Gå til mappa for prosjektet og skriv ```npm i```
 ### 3. Fyr opp dev-server
 ```npm run serve```
 
-Gå til http://localhost:8080/ og hvis ser en tom todo-liste er du klar for workshop!
+Gå til http://localhost:8080/ . Her skal du se starten på en todo-app, og hvis sida oppdaterer seg når du endrer og lagrer koden er du klar for workshop!
