@@ -1,3 +1,3 @@
 <template>
-    <h1>Omomomom</h1>
+  <h1 class="title">Omomomom</h1>
 </template>
