@@ -6,6 +6,20 @@
   </div>
 
   <div class="todos-container">
+    <div class="todo-item">
+      <label class="todo-checkbox">
+        <input
+          type="checkbox"
+        >
+        <span></span>
+      </label>
+      <div>Et gjøremål</div>
+      <span
+        class="material-icons"
+      >
+        delete
+      </span>
+    </div>
 
   </div>
 </template>
