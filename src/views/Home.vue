@@ -44,7 +44,7 @@ import TodoItem from '../components/TodoItem.vue'
 export default {
   name: 'Home',
   components: {
-    TodoItem: TodoItem
+    TodoItem
   },
   data () {
     return {
