@@ -18,12 +18,12 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'TodoItem',
-  props: {
-    text: String,
-    isCompleted: Boolean
-  }
-}
+<script setup>
+import { defineProps } from 'vue'
+
+defineProps({
+  text: String,
+  isCompleted: Boolean
+})
+
 </script>

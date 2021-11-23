@@ -10,7 +10,7 @@
 
   <div class="todos-container">
     <div v-if="todosExist">
-      <todo-item
+      <TodoItem
         v-for="(todo, index) in todos"
         :key="todo.text + index"
         :text="todo.text"
@@ -18,7 +18,7 @@
         @delete="handleDeleteTodo(index)"
         @check="todo.isCompleted = !todo.isCompleted"
       >
-      </todo-item>
+      </TodoItem>
       <div style="margin-top: 20px"> {{ noOfCompletedTasks }} gjøremål fullført</div>
     </div>
     <div v-else>
@@ -38,65 +38,46 @@
   </div>
 </template>
 
-<script>
+<script setup>
+import { reactive, computed, onMounted, ref, watch } from 'vue'
 import TodoItem from '../components/TodoItem.vue'
 
-export default {
-  name: 'Home',
-  components: {
-    TodoItem
-  },
-  data () {
-    return {
-      user: {
-        firstName: '',
-        lastName: ''
-      },
-      newTodo: '',
-      todos: [],
-      snapshots: []
-    }
-  },
-  methods: {
-    handleNewTodo () {
-      this.todos.push({
-        text: this.newTodo,
-        isCompleted: false
-      })
-      this.newTodo = ''
-    },
-    handleDeleteTodo (index) {
-      this.todos.splice(index, 1)
-    },
-    todosAsString (todos) {
-      return todos.map(todo => todo.text).join(' - ')
-    }
-  },
-  computed: {
-    todosExist () {
-      return this.todos.length > 0
-    },
-    userName () {
-      return this.user.firstName + ' ' + this.user.lastName
-    },
-    noOfCompletedTasks () {
-      return this.todos.filter(todo =>
-        todo.isCompleted === true).length
-    }
-  },
-  watch: {
-    todos: {
-      handler (value) {
-        this.snapshots.push(this.todosAsString(value))
-      },
-      deep: true
-    }
-  },
-  mounted () {
-    this.user = {
-      firstName: 'Tim',
-      lastName: 'Origosen'
-    }
-  }
+const user = reactive({
+  firstName: 'f',
+  lastName: 'fd'
+})
+const userName = computed(() => user.firstName + ' ' + user.lastName)
+
+onMounted(() => {
+  user.firstName = 'Tim'
+  user.lastName = 'Origosen'
+})
+
+const newTodo = ref('')
+const todos = ref([])
+
+function handleNewTodo () {
+  todos.value.push({
+    text: newTodo.value,
+    isCompleted: false
+  })
+  newTodo.value = ''
 }
+
+function handleDeleteTodo (index) {
+  todos.value.splice(index, 1)
+}
+
+function todosAsString (todos) {
+  return todos.map(todo => todo.text).join(' - ')
+}
+
+const todosExist = computed(() => todos.value.length > 0)
+const noOfCompletedTasks = computed(() => todos.value.filter(todo => todo.isCompleted === true).length)
+
+const snapshots = ref([])
+watch(todos, (value) => {
+  snapshots.value.push(todosAsString(value))
+}, { deep: true })
+
 </script>
