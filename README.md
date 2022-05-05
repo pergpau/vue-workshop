@@ -19,5 +19,7 @@ Gå til mappa for prosjektet og skriv ```npm i```
 
 Gå til http://localhost:8080/ . Her skal du se starten på en todo-app (men ingen knapper skal fungere). Test også å gjøre en liten endring i koden (f.eks. endre noe tekst), og hvis sida oppdaterer seg når du lagrer koden er du klar for workshop!
 
+PS. Hvis du bruker en autoformater/prettier i din editor kan det også være lurt å sjekke at det fungerer som det skal (og ikke gir konflikter med linteren som er skrudd på som standard)
+
 Hvis det ikke går er det mulig du trenger å installe vue-cli globalt:
 ```npm install -g @vue/cli```
