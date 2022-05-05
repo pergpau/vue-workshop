@@ -1,4 +1,4 @@
-# Vue-workshop 24. nov
+# Vue-workshop 10. mai
 
 ## Forberedelser før workshopen
 
@@ -13,6 +13,7 @@ Gå for Node versjon 16.x (17 kan by på problemer)
 ### 2. Installer packages
 
 Gå til mappa for prosjektet og skriv ```npm i```
+Ignorer vulnerabilty warnings, de er ikke farlige for oss.
 
 ### 3. Fyr opp dev-server
 ```npm run serve```
