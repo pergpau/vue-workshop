@@ -12,7 +12,7 @@ Gå for Node versjon 16.x (17 kan by på problemer)
 
 ### 2. Installer packages
 
-Gå til mappa for prosjektet og skriv ```npm i```
+Gå til mappa for prosjektet og skriv ```npm i``` for å installere dependencies.  
 Ignorer vulnerabilty warnings, de er ikke farlige for oss.
 
 ### 3. Fyr opp dev-server
@@ -22,5 +22,5 @@ Gå til http://localhost:8080/ . Her skal du se starten på en todo-app (men ing
 
 PS. Hvis du bruker en autoformater/prettier i din editor kan det også være lurt å sjekke at det fungerer som det skal (og ikke gir konflikter med linteren som er skrudd på som standard)
 
-Hvis det ikke går er det mulig du trenger å installe vue-cli globalt:
+Hvis det ikke går å starte dev server er det mulig du trenger å installe vue-cli globalt:
 ```npm install -g @vue/cli```
